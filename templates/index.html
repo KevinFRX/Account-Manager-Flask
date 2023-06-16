@@ -1,3 +1,7 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
 {% with messages = get_flashed_messages() %}
 {% if messages %}
 {% for message in messages %}
@@ -30,9 +34,11 @@
                 <td>{{ contact.3 }}</td>
                 <td>
                     <a href="/edit/{{ contact.0 }}">Edit</a>
-                    <a href="/delete/{{ contact.0 }}">Delete</a>
+                    <a href="/delete/{{ contact.0 }}" class="btn-delete">Delete</a>
                 </td>
             </tr>
         {% endfor %}
     </tbody>
 </table>
+
+{% endblock %}
